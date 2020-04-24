@@ -15,9 +15,6 @@ const SESSION_SECRET   = 'anything';
 const CALLBACK_URL     = 'https://5ea275583c49d4776ae616dd--stupefied-elion-f671bf.netlify.app/.netlify/functions/api/';  // You can run locally with - http://localhost:3000/auth/twitch/callback
 
 
-const app           = express()
-const router        = express.Router();
-
 app.use('/.netlify/functions/api', router)
 app.use(session({secret: SESSION_SECRET, resave: false, saveUninitialized: false}));
 app.use(express.static('public'));
